@@ -38,18 +38,22 @@ class App {
     });
   }
 
+  cycleControl() {
+    this.clearInput();
+    this.renderExpenseItem();
+    this.controlExpense();
+  }
 
   editExpense(e) {
     e.preventDefault();
     const id = Number(e.target.closest('.edit-icon').getAttribute('data-id'));
     const element = this._state.results.find(el => el.id === id);
-    this.clearInput();
+    this._state.results.splice(this._state.results.indexOf(element), 1);
+    this._state.balance += element.amount;
+    this._state.expense -= element.amount;
+    this.cycleControl();
     this._expenseInputTitle.value = element.title;
     this._expenseInputAmount.value = element.amount;
-    this._state.results.splice(this._state.results.indexOf(element), 1);
-    document.querySelector('.expense-list').innerHTML = '';
-    this.renderExpenseItem();
-    this.controlExpense();
   }
 
   deleteExpense(e) {
@@ -57,17 +61,16 @@ class App {
     const id = Number(e.target.closest('.delete-icon').getAttribute('data-id'));
     const element = this._state.results.find(el => el.id === id);
     this._state.results.splice(this._state.results.indexOf(element), 1);
-    this.clearInput();
-    this.renderExpenseItem();
-    this.controlExpense();
+    this.cycleControl();
   }
 
   addBudget(e) {
     e.preventDefault();
     if (this.checkInput('budget')) {
       this._state.budget += Number(this._budgetInputAmount.value);
+      this._state.balance += Number(this._budgetInputAmount.value);
       this._budgetAmount.textContent = this._state.budget;
-      this._balanceAmount.textContent = this._budgetInputAmount.value;
+      this._balanceAmount.textContent = this._state.balance;
       this.clearInput();
     }
   }
@@ -75,7 +78,8 @@ class App {
   addExpense(e) {
     e.preventDefault();
     if (this.checkInput('expense')) {
-      const check = this._state.expense + Number(this._expenseInputAmount.value);
+      const expenseValue = Number(this._expenseInputAmount.value);
+      const check = this._state.expense + expenseValue;
       if (this._state.budget < check) {
         this.displayFeedback('block', 'expense', 'Please input the valid amount!!');
         return;
@@ -83,17 +87,17 @@ class App {
       this._state.results.push({
         id: Math.round(Math.random() * 5555),
         title: this._expenseInputTitle.value,
-        amount: Number(this._expenseInputAmount.value)
+        amount: expenseValue
       });
-      this._state.expense += Number(this._expenseInputAmount.value);
-      this._expenseAmount.textContent = this._state.expense;
-      this.clearInput();
-      this.renderExpenseItem();
-      this.controlExpense();
+      this._state.expense += expenseValue;
+      this._state.balance -= expenseValue;
+      this.cycleControl();
     }
   }
 
   renderExpenseItem() {
+    this._expenseAmount.textContent = this._state.expense;
+    this._balanceAmount.textContent = this._state.balance;
     const markup = this._state.results.map(el => {
       return `
            <div class="expense">
@@ -118,14 +122,14 @@ class App {
   checkInput(type) {
     if (type === 'budget') {
       if (this._budgetInputAmount.value.length !== 0) {
-        this.displayFeedback('none');
+        this.displayFeedback('none', 'budget');
         return true;
       } else {
         this.displayFeedback('block', 'budget');
       }
     } else {
       if (this._expenseInputAmount.value.length !== 0 && this._expenseInputTitle.value.length !== 0) {
-        this.displayFeedback('none');
+        this.displayFeedback('none', 'expense');
         return true;
       } else {
         this.displayFeedback('block', 'expense');
@@ -133,7 +137,7 @@ class App {
     }
   }
 
-  displayFeedback(style, type, message = 'Please fill in the form!!') {
+  displayFeedback(style = 'none', type, message = 'Please fill in the form!!') {
     if (type === 'budget') {
       this._budgetFeedback.style.display = style;
       this._budgetFeedback.textContent = message;
