@@ -1,7 +1,8 @@
 class App {
   #status = document.querySelector('.game--status');
   #gameActive = true;
-  #firstTurn = 'X';
+  #currentTurn = 'X';
+  #state = ['', '', '', '', '', '', '', '', ''];
   #Condition = [
     [0, 1, 2],
     [3, 4, 5],
@@ -12,7 +13,6 @@ class App {
     [0, 4, 8],
     [2, 4, 6]
   ];
-  #state = ['', '', '', '', '', '', '', '', ''];
 
   constructor() {
     this.event();
@@ -28,21 +28,22 @@ class App {
   keyDispatcher(e) {
     e.preventDefault()
     if (this.#gameActive) {
-      const index = Number(e.target.getAttribute('data-cell-index'));
-      if (e.target.textContent !== '') return;
+      const target = e.target;
+      const index = Number(target.getAttribute('data-cell-index'));
+      if (target.textContent !== '') return;
 
-      this.input(e.target, index);
-      this.checkInput();
-      this.changeTurn(e.target);
+      this.inputCell(target, index);
+      this.checkValidation();
+      this.changeTurn(target);
     }
   }
 
-  input(target, index) {
-    this.#state[index] = this.#firstTurn;
-    target.textContent = this.#firstTurn;
+  inputCell(target, index) {
+    this.#state[index] = this.#currentTurn;
+    target.textContent = this.#currentTurn;
   }
 
-  checkInput() {
+  checkValidation() {
     let roundWin = false;
     for (let i = 0; i <= this.#Condition.length - 1; i++) {
       const winCondition = this.#Condition[i];
@@ -61,7 +62,7 @@ class App {
     }
 
     if (roundWin) {
-      this.#status.textContent = `${this.#firstTurn} WIN the game!!!`;
+      this.#status.textContent = `${this.#currentTurn} WIN the game!!!`;
       this.#gameActive = false;
       return;
     }
@@ -75,7 +76,7 @@ class App {
   }
 
   changeTurn(target) {
-    this.#firstTurn = target.textContent === 'O' ? 'X' : 'O';
+    this.#currentTurn = target.textContent === 'O' ? 'X' : 'O';
   }
 
   clearInput() {
