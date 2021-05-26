@@ -26,7 +26,7 @@ class App {
   }
 
   keyDispatcher(e) {
-    e.preventDefault()
+    e.preventDefault();
     if (this.#gameActive) {
       const target = e.target;
       const index = Number(target.getAttribute('data-cell-index'));
@@ -83,5 +83,5 @@ class App {
     location.reload();
   }
 }
-
+ 
 new App();
