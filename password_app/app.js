@@ -57,7 +57,7 @@ class App {
     }
 
     if (this.#upper.checked === true && this.#number.checked === true) {
-      const half1 = Math.floor(Math.random() * this.#passLength.value) - 5;
+      const half1 = Math.floor(Math.random() * this.#passLength.value);
       const half2 = this.#passLength.value - half1;
 
       this.checkNumber(half1);
@@ -67,7 +67,7 @@ class App {
     }
 
     if (this.#upper.checked === true && this.#symbol.checked === true) {
-      const half1 = Math.floor(Math.random() * this.#passLength.value) - 5;
+      const half1 = Math.floor(Math.random() * this.#passLength.value);
       const half2 = this.#passLength.value - half1;
 
       this.checkSymbol(half1);
@@ -77,7 +77,7 @@ class App {
     }
 
     if (this.#number.checked === true && this.#symbol.checked === true) {
-      const half1 = Math.floor(Math.random() * this.#passLength.value) - 5;
+      const half1 = Math.floor(Math.random() * this.#passLength.value);
       const half2 = this.#passLength.value - half1;
 
       this.checkSymbol(half1);
