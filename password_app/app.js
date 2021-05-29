@@ -101,6 +101,7 @@ class App {
     for (let i = 0; i <= len; i++) {
       const rand = Math.round(Math.random() * 26) + 65;
       this.#state.push(String.fromCharCode(rand));
+
     }
   }
 
