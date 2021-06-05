@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Text Scroll</title>
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          color: #000;
+          font-size: 1.5rem;
+      }
+
+      body {
+          width: 100%;
+          height: 500vh;
+      }
+
+      h1 {
+          position: fixed;
+          top: 40%;
+          white-space: nowrap;
+      }
+  </style>
 </head>
 <body>
 
+<h1>TEST TEST TEST TEST TEST TEST TEST TEST TEST</h1>
+
+
+<script>
+  const element = document.querySelector('h1');
+
+  window.addEventListener('scroll', function () {
+    const pos = window.scrollY - 500;
+    element.style.left = `${pos}px`;
+  })
+</script>
 </body>
 </html>
