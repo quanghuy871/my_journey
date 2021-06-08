@@ -14,7 +14,6 @@ const effect = function () {
     i++;
     setTimeout(effect, 10);
   }
-
 }
 
 effect();
