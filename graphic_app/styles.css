@@ -1,23 +1,24 @@
-.beyond, .ordinary {
+.section-outer .beyond, .ordinary {
     font-size: 75px;
 }
 
-.align-items-center {
+.section-outer .align-items-center {
     align-items: center !important;
 }
 
-.wrapper {
+.section-outer .wrapper {
     margin: 0 auto;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
 }
 
-span {
+.section-outer span {
     line-height: 1;
 }
 
-.beyond-box {
-    padding: 25px 40px 30px 40px;
+.section-outer .beyond-box {
+    padding: 25px 40px 35px 40px;
     border-top: 3px solid #c09473;
     border-left: 3px solid #c09473;
     border-right: 3px solid #c09473;
@@ -25,7 +26,7 @@ span {
     position: relative;
 }
 
-.show {
+.section-outer .show {
     position: absolute;
     padding: 0 15px;
     bottom: 5px;
@@ -34,7 +35,7 @@ span {
     font-size: 35px;
 }
 
-.the {
+.section-outer .the {
     font-size: 35px;
     position: absolute;
     bottom: 124px;
@@ -42,11 +43,17 @@ span {
     right: 50px;
 }
 
-h2 {
+.section-outer h2 {
     font-size: 50px;
 }
 
-.top {
+@media screen and (max-width: 1000px) {
+    .text-wrapper h2 {
+        font-size: 42px;
+    }
+}
+
+.section-outer .top {
     color: white;
     position: absolute;
     max-width: 460px;
@@ -56,25 +63,49 @@ h2 {
     line-height: 1;
 }
 
-.bottom {
+.section-outer .bottom {
     position: absolute;
     right: 25%;
     top: 88%;
 }
 
-.content-row:after {
+.section-outer .content-row:after {
     position: absolute;
     z-index: -1;
     content: '';
     height: 150px;
     width: 108%;
-    background-color: #c09473;
+    background-color: #ad8261;
     left: -483px;
     bottom: 50%;
     transform: translate(50%, 50%);
 }
 
-.outline:before {
+@media screen and (max-width: 1000px) {
+    .section-outer .content-row:after {
+        height: 150px;
+        width: 110.5%;
+        left: -381px;
+        bottom: 50%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .section-outer .top {
+        right: 6%;
+        top: -10%;
+        font-size: 32px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .section-outer img {
+        height: 350px;
+    }
+}
+
+.section-outer .outline:before {
     content: '';
     display: block;
     width: 155px;
@@ -84,7 +115,7 @@ h2 {
     border-top: 3px solid #c09473;
 }
 
-.outline:after {
+.section-outer .outline:after {
     content: '';
     display: block;
     width: 155px;
