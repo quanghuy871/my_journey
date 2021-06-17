@@ -1,0 +1,38 @@
+.img-wrapper, .text-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.2;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+p.author {
+    font-weight: 300;
+}
+
+img {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.post-item {
+    border: 1px solid black;
+    max-width: 530px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.text-wrapper {
+    max-width: 320px;
+    padding: 15px 30px 15px 0;
+}

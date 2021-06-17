@@ -2,9 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Conversations</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<a href="#" class="post-item">
+  <div class="img-wrapper">
+    <img height="160" width="200" src="https://via.placeholder.com/160x200" alt="img">
+  </div>
+
+  <div class="text-wrapper">
+    <h3 class="title">The Future of Work</h3>
+    <p class="cate">Essentials of Communication</p>
+    <p class="author">Jacob Morgan</p>
+  </div>
+</a>
+
+<div class="post-item">
+  <div class="img-wrapper">
+    <img height="160" width="200" src="https://via.placeholder.com/160x200" alt="img">
+  </div>
+
+  <div class="text-wrapper">
+    <h3 class="title">How to Develop Executive Presence</h3>
+    <p class="cate">Essentials of Communication</p>
+    <p class="author">Dr. Benjamin Ritter</p>
+  </div>
+</div>
+
+
+[wpbb-if post:featured_image]
+<div class="fl-post-image">
+  [wpbb post:featured_image size="large" display="tag" linked="yes"]
+</div>
+[/wpbb-if]
+
+<div class="fl-post-text">
+
+  <h2 class="fl-post-title">[wpbb post:link text="title"]</h2>
+
+  <div class="fl-post-meta">
+    By [wpbb post:author_name link="yes"]
+    <span class="fl-post-meta-sep"> | </span>
+    [wpbb post:date format="F j, Y"]
+  </div>
+
+  <div class="fl-post-excerpt">
+    [wpbb post:excerpt length="15" more="..."]
+  </div>
+
+  <div class="fl-post-more-link">
+    [wpbb post:link text="custom" custom_text="Read More..."]
+  </div>
+
+</div>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+<script src="app.js"></script>
 </body>
 </html>
