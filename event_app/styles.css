@@ -1,6 +1,37 @@
-.test {
-  color: red;
-  font-size: 100px;
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.d-block {
+  display: block;
+}
+
+.blue {
+  color: #1b44d1;
+}
+
+.white {
+  color: #fff;
+}
+
+.small {
+  font-size: 20px;
+}
+
+.black {
+  color: #231f20;
+}
+
+.light-black {
+  color: #333333;
 }
 
 .tribe-events-pg-template {
@@ -37,6 +68,7 @@
   font-weight: 600;
 }
 .section-details .card-body .black {
+  font-weight: 600;
   font-size: 25px;
 }
 @media screen and (max-width: 1200px) {
@@ -60,26 +92,6 @@
   margin-left: auto;
 }
 
-.small {
-  font-size: 20px;
-}
-
-.black {
-  color: #231f20;
-}
-
-.light-black {
-  color: #333333;
-}
-
-.blue {
-  color: #1b44d1;
-}
-
-.white {
-  color: #fff;
-}
-
 .section-blurbs {
   text-align: center;
   background-color: #f3f3f3;
@@ -92,7 +104,13 @@
 }
 @media screen and (max-width: 1200px) {
   .section-blurbs h5 {
-    font-size: 15px;
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .section-blurbs h5 {
+    font-size: 22px;
     margin-bottom: 25px;
   }
 }
@@ -123,8 +141,24 @@
     padding: 10px;
   }
 }
+@media screen and (max-width: 992px) {
+  .section-blurbs .blurb-item {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .section-blurbs .blurb:nth-child(2) {
+    border-right: none !important;
+  }
+}
 .section-blurbs .blurb:not(:last-child) {
   border-right: 1px solid #919191;
+}
+@media screen and (max-width: 576px) {
+  .section-blurbs .blurb:not(:last-child) {
+    border-bottom: 1px solid #919191;
+    border-right: none !important;
+  }
 }
 .section-blurbs .facilitator-portrait {
   margin-bottom: 10px;
@@ -135,6 +169,16 @@
 .section-generic-content {
   padding: 70px 0;
 }
+@media screen and (max-width: 992px) {
+  .section-generic-content {
+    padding: 40px 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .section-generic-content .container {
+    padding: 0;
+  }
+}
 .section-generic-content .generic {
   padding-left: 40px;
   margin-bottom: 70px;
@@ -142,9 +186,9 @@
 }
 @media screen and (max-width: 1200px) {
   .section-generic-content .generic {
+    max-width: 600px;
     padding-left: 0;
     margin-bottom: 50px;
-    max-width: none;
   }
 }
 @media screen and (max-width: 992px) {
@@ -162,8 +206,18 @@
   font-weight: 500;
   margin-bottom: 5px;
 }
+@media screen and (max-width: 1200px) {
+  .section-generic-content p {
+    font-size: 18px;
+  }
+}
 .section-generic-content li {
   list-style-type: square;
+}
+@media screen and (max-width: 1200px) {
+  .section-generic-content li {
+    line-height: 1.5;
+  }
 }
 .section-generic-content li::marker {
   color: #1b44d1;
@@ -173,7 +227,7 @@
   padding: 0;
   border-radius: 20px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 576px) {
   .section-generic-content .sidebar {
     padding: 15px;
   }
@@ -192,6 +246,11 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+@media screen and (max-width: 1200px) {
+  .section-generic-content .sidebar .generic-sidebar-content {
+    padding: 20px 20px 50px 20px;
+  }
+}
 .section-generic-content .sidebar .generic-sidebar-content h5 {
   margin-bottom: 50px;
 }
@@ -209,6 +268,7 @@
   font-size: 22px;
 }
 .section-generic-content .sidebar .card-body h4.blue {
+  font-weight: 600;
   line-height: 1;
   font-size: 32px;
 }
@@ -241,23 +301,12 @@
   padding: 10px 40px;
 }
 
-.text-right {
-  text-align: right;
+@media screen and (max-width: 992px) {
+  .right-navigate .corporate-course-navigate {
+    margin-top: 90px;
+  }
 }
-
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.d-block {
-  display: block;
-}
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
   .right-navigate {
     display: none;
   }
@@ -278,6 +327,7 @@
   height: 20px;
 }
 .corporate-course-navigate span {
+  line-height: 1.1;
   position: relative;
   font-size: 22px;
   font-weight: 500;

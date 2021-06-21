@@ -1,6 +1,37 @@
-.test {
-  color: red;
-  font-size: 100px;
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.d-block {
+  display: block;
+}
+
+.blue {
+  color: #1b44d1;
+}
+
+.white {
+  color: #fff;
+}
+
+.small {
+  font-size: 20px;
+}
+
+.black {
+  color: #231f20;
+}
+
+.light-black {
+  color: #333333;
 }
 
 .tribe-events-pg-template {
@@ -35,9 +66,10 @@
     font-weight: 600;
 
     .black {
+      font-weight: 600;
       font-size: 25px;
 
-      @media screen and (max-width: 1200px){
+      @media screen and (max-width: 1200px) {
         font-size: 20px;
       }
     }
@@ -49,7 +81,7 @@
         font-size: 32px;
         line-height: 1;
 
-        @media screen and (max-width: 1200px){
+        @media screen and (max-width: 1200px) {
           font-size: 25px;
         }
       }
@@ -59,26 +91,6 @@
   a {
     margin-left: auto;
   }
-}
-
-.small {
-  font-size: 20px;
-}
-
-.black {
-  color: #231f20;
-}
-
-.light-black {
-  color: #333333;
-}
-
-.blue {
-  color: #1b44d1;
-}
-
-.white {
-  color: #fff;
 }
 
 .section-blurbs {
@@ -92,7 +104,12 @@
     margin-bottom: 45px;
 
     @media screen and (max-width: 1200px) {
-      font-size: 15px;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    @media screen and (max-width: 992px) {
+      font-size: 22px;
       margin-bottom: 25px;
     }
   }
@@ -102,7 +119,7 @@
     width: 80px;
     margin-bottom: 45px;
 
-    @media screen and (max-width: 1200px){
+    @media screen and (max-width: 1200px) {
       margin-bottom: 25px;
     }
   }
@@ -121,13 +138,30 @@
   .blurb-item {
     padding: 10px 30px 10px 30px;
 
-    @media screen and (max-width: 1200px){
+    @media screen and (max-width: 1200px) {
       padding: 10px;
+    }
+
+    @media screen and (max-width: 992px) {
+      padding: 30px;
     }
   }
 
-  .blurb:not(:last-child) {
-    border-right: 1px solid #919191;
+  .blurb {
+    &:nth-child(2) {
+      @media screen and (max-width: 992px) {
+        border-right: none !important;
+      }
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid #919191;
+
+      @media screen and (max-width: 576px) {
+        border-bottom: 1px solid #919191;
+        border-right: none !important;
+      }
+    }
   }
 
   .facilitator-portrait {
@@ -140,15 +174,25 @@
 .section-generic-content {
   padding: 70px 0;
 
+  @media screen and (max-width: 992px) {
+    padding: 40px 0;
+  }
+
+  .container {
+    @media screen and (max-width: 1200px) {
+      padding: 0;
+    }
+  }
+
   .generic {
     padding-left: 40px;
     margin-bottom: 70px;
     max-width: 850px;
 
     @media screen and (max-width: 1200px) {
+      max-width: 600px;
       padding-left: 0;
       margin-bottom: 50px;
-      max-width: none;
     }
 
     @media screen and (max-width: 992px) {
@@ -166,10 +210,18 @@
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 5px;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 18px;
+    }
   }
 
   li {
     list-style-type: square;
+
+    @media screen and (max-width: 1200px) {
+      line-height: 1.5;
+    }
   }
 
   li::marker {
@@ -181,7 +233,7 @@
     padding: 0;
     border-radius: 20px;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 576px) {
       padding: 15px;
     }
 
@@ -195,14 +247,18 @@
     }
 
     .generic-sidebar-content {
-      h5 {
-        margin-bottom: 50px;
-      }
-
       padding: 30px 30px 50px 30px;
       border: 1px solid #9f9f9f;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
+
+      @media screen and (max-width: 1200px) {
+        padding: 20px 20px 50px 20px;
+      }
+
+      h5 {
+        margin-bottom: 50px;
+      }
     }
 
     img {
@@ -221,6 +277,7 @@
         }
 
         &.blue {
+          font-weight: 600;
           line-height: 1;
           font-size: 32px;
         }
@@ -261,24 +318,14 @@
   }
 }
 
-.text-right {
-  text-align: right;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.d-block {
-  display: block;
-}
-
 .right-navigate {
-  @media screen and (max-width: 1200px) {
+  .corporate-course-navigate {
+    @media screen and (max-width: 992px) {
+      margin-top: 90px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
     display: none;
   }
 }
@@ -300,6 +347,7 @@
   }
 
   span {
+    line-height: 1.1;
     position: relative;
     font-size: 22px;
     font-weight: 500;
