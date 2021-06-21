@@ -8,7 +8,11 @@
 }
 
 .section-details {
-  padding: 40px 15px;
+  padding: 40px;
+
+  @media screen and (max-width: 1200px) {
+    padding: 30px;
+  }
 
   @media screen and (max-width: 767px) {
     padding: 20px 15px;
@@ -19,6 +23,10 @@
     margin-bottom: 60px;
     color: #1b44d1;
     font-weight: 700;
+
+    @media screen and (max-width: 1200px) {
+      margin-bottom: 40px;
+    }
   }
 
   .card-body {
@@ -28,6 +36,10 @@
 
     .black {
       font-size: 25px;
+
+      @media screen and (max-width: 1200px){
+        font-size: 20px;
+      }
     }
 
     .card-detail {
@@ -36,8 +48,16 @@
       h6 {
         font-size: 32px;
         line-height: 1;
+
+        @media screen and (max-width: 1200px){
+          font-size: 25px;
+        }
       }
     }
+  }
+
+  a {
+    margin-left: auto;
   }
 }
 
@@ -46,11 +66,19 @@
 }
 
 .black {
-  color: #000;
+  color: #231f20;
+}
+
+.light-black {
+  color: #333333;
 }
 
 .blue {
   color: #1b44d1;
+}
+
+.white {
+  color: #fff;
 }
 
 .section-blurbs {
@@ -62,12 +90,21 @@
   h5 {
     font-size: 22px;
     margin-bottom: 45px;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
   }
 
   img {
     height: 80px;
     width: 80px;
     margin-bottom: 45px;
+
+    @media screen and (max-width: 1200px){
+      margin-bottom: 25px;
+    }
   }
 
   h4 {
@@ -78,10 +115,15 @@
   p {
     font-weight: 600;
     margin-bottom: 0;
+    line-height: 1.2;
   }
 
   .blurb-item {
-    padding: 30px 30px 0 30px;
+    padding: 10px 30px 10px 30px;
+
+    @media screen and (max-width: 1200px){
+      padding: 10px;
+    }
   }
 
   .blurb:not(:last-child) {
@@ -92,5 +134,184 @@
     margin-bottom: 10px;
     height: 115px;
     width: 105px;
+  }
+}
+
+.section-generic-content {
+  padding: 70px 0;
+
+  .generic {
+    padding-left: 40px;
+    margin-bottom: 70px;
+    max-width: 850px;
+
+    @media screen and (max-width: 1200px) {
+      padding-left: 0;
+      margin-bottom: 50px;
+      max-width: none;
+    }
+
+    @media screen and (max-width: 992px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  h6 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  li {
+    list-style-type: square;
+  }
+
+  li::marker {
+    color: #1b44d1;
+    font-size: 30px;
+  }
+
+  .sidebar {
+    padding: 0;
+    border-radius: 20px;
+
+    @media screen and (max-width: 1200px) {
+      padding: 15px;
+    }
+
+    .wrapper {
+      border: 1px solid #7232e4;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      padding: 30px;
+      background-color: #7232e4;
+      text-align: center;
+    }
+
+    .generic-sidebar-content {
+      h5 {
+        margin-bottom: 50px;
+      }
+
+      padding: 30px 30px 50px 30px;
+      border: 1px solid #9f9f9f;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    img {
+      margin-bottom: 50px;
+    }
+
+    .card-body {
+      padding: 0;
+
+      h4 {
+        margin-bottom: 0;
+        font-weight: 500;
+
+        &.black {
+          font-size: 22px;
+        }
+
+        &.blue {
+          line-height: 1;
+          font-size: 32px;
+        }
+      }
+
+      .card-detail {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+
+.btn {
+  max-width: 180px;
+  width: 100%;
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: unset;
+
+  &.btn-blue {
+    color: #fff;
+    background-color: #2b85ff;
+    border: 1px solid #2b85ff;
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    border: 1px solid #999999;
+  }
+
+  &.btn-puple {
+    color: #fff;
+    background-color: #7232e4;
+    max-width: unset;
+    width: unset;
+    padding: 10px 40px;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.d-block {
+  display: block;
+}
+
+.right-navigate {
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.corporate-course-navigate {
+  margin-top: 130px;
+
+  .btn-circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #7232e4;
+    padding: 5px;
+
+    img {
+      height: 20px;
+    }
+  }
+
+  span {
+    position: relative;
+    font-size: 22px;
+    font-weight: 500;
+    display: inline-block;
+    text-align: right;
+    padding-right: 50px;
+    max-width: 350px;
+
+    a {
+      position: absolute;
+      bottom: 50%;
+      transform: translate(25%, 50%);
+    }
   }
 }
