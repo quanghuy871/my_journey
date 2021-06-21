@@ -1,0 +1,96 @@
+.test {
+  color: red;
+  font-size: 100px;
+}
+
+.tribe-events-pg-template {
+  max-width: 1300px !important;
+}
+
+.section-details {
+  padding: 40px 15px;
+
+  @media screen and (max-width: 767px) {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 44px;
+    margin-bottom: 60px;
+    color: #1b44d1;
+    font-weight: 700;
+  }
+
+  .card-body {
+    padding: 0;
+    color: #1b44d1;
+    font-weight: 600;
+
+    .black {
+      font-size: 25px;
+    }
+
+    .card-detail {
+      margin-bottom: 30px;
+
+      h6 {
+        font-size: 32px;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.small {
+  font-size: 20px;
+}
+
+.black {
+  color: #000;
+}
+
+.blue {
+  color: #1b44d1;
+}
+
+.section-blurbs {
+  text-align: center;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  padding: 30px 0;
+
+  h5 {
+    font-size: 22px;
+    margin-bottom: 45px;
+  }
+
+  img {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 45px;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 42px;
+  }
+
+  p {
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .blurb-item {
+    padding: 30px 30px 0 30px;
+  }
+
+  .blurb:not(:last-child) {
+    border-right: 1px solid #919191;
+  }
+
+  .facilitator-portrait {
+    margin-bottom: 10px;
+    height: 115px;
+    width: 105px;
+  }
+}
