@@ -155,3 +155,10 @@ class App {
 }
 
 new App();
+
+const link = document.querySelector('.leaky-paywall-payment-button').querySelector('a');
+const click = document.querySelector('#leaky_paywall_message').querySelector('a');
+
+click.onclick = function() {
+  link.click();
+};
