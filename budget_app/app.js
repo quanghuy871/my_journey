@@ -156,9 +156,12 @@ class App {
 
 new App();
 
-const link = document.querySelector('.leaky-paywall-payment-button').querySelector('a');
-const click = document.querySelector('#leaky_paywall_message').querySelector('a');
+const link = document.querySelector('.uabb-banner-style01');
+const click = document.querySelector('.cta-link');
 
-click.onclick = function() {
-  link.click();
-};
+const a = click.getAttribute('href');
+link.setAttribute('onClick', `location.href='${a}';`);
+
+link.addEventListener('click', function (e) {
+  click.click();
+})
