@@ -677,6 +677,7 @@ h4.note a {
 
 
 @media (max-width: 770px) {
+
     .section-outer img {
         height: 300px;
     }
