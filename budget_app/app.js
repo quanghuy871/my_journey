@@ -156,12 +156,11 @@ class App {
 
 new App();
 
-const link = document.querySelector('.uabb-banner-style01');
-const click = document.querySelector('.cta-link');
+let a = -1;
+if (a) {
+  console.log('true');
+} else {
+  console.log('false');
+}
 
-const a = click.getAttribute('href');
-link.setAttribute('onClick', `location.href='${a}';`);
 
-link.addEventListener('click', function (e) {
-  click.click();
-})
